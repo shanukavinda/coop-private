@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CoopMIS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <!-- Boxicons CDN Link -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="sidebar open">
+      <div class="logo-details">
+        <i class="bx bxl-c-plus-plus icon"></i>
+        <div class="logo_name">CoopMIS</div>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <i class="bx bx-search"></i>
+          <input type="text" placeholder="Search..." />
+          <span class="tooltip">Search</span>
+        </li>
+        <li>
+          <a href="../pages/customer.html">
+            <i class="bx bx-user"></i>
+            <span class="links_name">Customer</span>
+          </a>
+          <span class="tooltip">Customer</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-credit-card-front"></i>
+            <span class="links_name">Loan Application</span>
+          </a>
+          <span class="tooltip">Loan Application</span>
+        </li>
+        <li>
+          <a href="../pages/savings-withdrawal.html">
+            <i class="bx bx-dollar-circle"></i>
+            <span class="links_name">Savings Withdrawal</span>
+          </a>
+          <span class="tooltip">Savings Withdrawal</span>
+        </li>
+        <li>
+          <a href="../pages/savings-open.html">
+            <i class="bx bx-wallet"></i>
+            <span class="links_name">Savings Open</span>
+          </a>
+          <span class="tooltip">Savings Open</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Settings</span>
+          </a>
+          <span class="tooltip">Settings</span>
+        </li>
+        <li class="profile">
+          <div class="profile-details">
+            <img src="profile.jpg" alt="profileImg" />
+            <div class="name_job">
+              <div class="name">John Doe</div>
+              <div class="job">Developer</div>
+            </div>
+          </div>
+          <i class="bx bx-log-out" id="log_out"></i>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section">
+      <div class="text">CoopMIS</div>
+
+      <div class="flex flex-wrap shadow-xl py-2 mx-2 rounded-lg bg-white justify-between ">
+      <div class="w-full max-w-full mt-4 sm:my-auto sm:mr-0 md:w-1/2 md:flex-none lg:w-4/12">
+        <div class="relative">
+          <ul class="relative flex list-none bg-transparent rounded-xl" role="tablist">
+            <li class="flex-auto mb-4 flex items-center justify-center">
+              <label for="customer-id-nic" class="font-bold text-xs text-gray-700">
+                Customer ID/NIC:
+              </label>
+              <input id="cus_Nic_No" type="text" onkeypress="handleKeyPress(event)"
+                class="border-b border-gray-300 outline-none focus:outline-none bg-transparent text-base py-2 w-24"
+                placeholder="ID/NIC" />
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex w-auto max-w-full p-2 pr-10">
+        <div class="flex-none w-auto max-w-full px-3 my-auto">
+          <div class="h-full justify-end">
+            <h5 class="mb-1" id="customer_Name">Customer Name</h5>
+            <p class="mb-0 font-semibold leading-normal text-sm" id="customer_Nic">Customer Number</p>
+            <p class="mb-0 font-semibold leading-normal text-sm" id="customer_No">Customer NIC</p>
+          </div>
+        </div>
+        <div
+          class="text-base ease-soft-in-out h-18.5 w-18.5 relative inline-flex items-center justify-center rounded-xl text-white transition-all duration-200">
+          <img src="../assets/img/bruce-mars.jpg" alt="profile_image" class="w-full shadow-soft-sm rounded-xl" />
+        </div>
+        <div
+          class="text-base ease-soft-in-out h-18.5 w-18.5 relative inline-flex items-center justify-center rounded-xl text-white transition-all duration-200">
+          <img src="../assets/img/sigaa.jpg" alt="profile_image" class="w-full shadow-soft-sm rounded-xl" />
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap">
+      <div class="w-full max-w-full mt-6 md:w-1/2 md:flex-none">
+        <h5 class="relative m-2 z-10 font-bold text-violet-900 ">
+          Credit Limit</h5>
+        <div class="shadow-xl mx-2 pt-2 my-2 pb-1 items-center justify-center rounded-lg bg-white">
+          <form role="form" class="mr-2 ml-2">
+            <label class="mb-2 ml-1 font-bold text-xs text-gray-700">Loan Product</label>
+            <div class="mb-4">
+              <input type="text"
+                class="focus:outline-none focus:ring focus:ring-fuchsia-300 focus:ring-opacity-50 focus:shadow-md text-sm leading-5 ease-in-out block w-full appearance-none rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-700 transition-all"
+                placeholder="Loan Product" aria-label="Password" aria-describedby="password-addon" />
+            </div>
+            <label class="mb-2 ml-1 font-bold text-xs text-gray-700">Amount</label>
+            <div class="mb-4">
+              <input type="text"
+                class="focus:outline-none focus:ring focus:ring-fuchsia-300 focus:ring-opacity-50 focus:shadow-md text-sm leading-5 ease-in-out block w-full appearance-none rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-700 transition-all"
+                placeholder="Amount" aria-label="Email" aria-describedby="email-addon" />
+            </div>
+            <label class="mb-2 ml-1 font-bold text-xs text-gray-700">Period</label>
+            <div class="mb-4">
+              <input type="text"
+                class="focus:outline-none focus:ring focus:ring-fuchsia-300 focus:ring-opacity-50 focus:shadow-md text-sm leading-5 ease-in-out block w-full appearance-none rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-700 transition-all"
+                placeholder="Period" aria-label="Password" aria-describedby="password-addon" />
+            </div>
+            <label class="mb-2 ml-1 font-bold text-xs text-gray-700">Reason</label>
+            <div class="">
+              <label for="states" class="sr-only">Choose a Reason</label>
+              <select id="states"
+                class="bg-gray-200 outline-2 border text-gray-800 text-sm rounded-r-lg border-l-gray-100 border-l-2 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected>Choose a Reason</option>
+                <option value="CA">I dunno</option>
+                <option value="TX">why?</option>
+                <option value="WH">why dunno?</option>
+                <option value="FL">how</option>
+                <option value="VG">do</option>
+                <option value="GE">i</option>
+                <option value="MI">Other</option>
+              </select>
+            </div>
+            <div class="mb-4">
+              <input type="text" class="h-8 w-full border-2 border-rose-500  rounded-lg py-2 transition-all hidden mt-2"
+                placeholder="Enter reason .." aria-label="other" id="otherInput" />
+            </div>
+        </div>
+      </div>
+      <div class="w-full max-w-full mt-6 md:w-1/2 md:flex-none">
+        <h5 class="relative m-2 z-10 font-bold text-violet-900">
+          Interest Policy</h5>
+          <div class="shadow-xl mr-2 ml-2 py-4 mb-4 items-center justify-center rounded-lg bg-white">
+            <div class="flex loan-detail-card border border-gray-300 rounded-md p-3 mt-2 mx-4 bg-slate-100">
+              <h6 class="font-semibold mx-2">Interest Rate :</h6>
+              <span class="text-gray-500 mx-2" id="interestRate">Loading...</span>
+            </div>
+          
+            <div class="flex loan-detail-card border border-gray-300 rounded-md p-3 mt-2 mx-4 bg-slate-100">
+              <h6 class="font-semibold mx-2">Penalty Interest Rate :</h6>
+              <span class="text-gray-500 mx-2" id="penaltyInterestRate">Loading...</span>
+            </div>
+          
+            <div class="flex loan-detail-card border border-gray-300 rounded-md p-3 mt-2 mx-4 bg-slate-100">
+              <h6 class="font-semibold mx-2">Period :</h6>
+              <span class="text-gray-500 mx-2" id="period">Loading...</span>
+            </div>
+          
+            <div class="flex loan-detail-card border border-gray-300 rounded-md p-3 mt-2 mx-4 bg-slate-100">
+              <h6 class="font-semibold mx-2">Interest Policy :</h6>
+              <span class="text-gray-500 mx-2" id="interestPolicy">Loading...</span>
+            </div>
+          </div>
+
+      </div>
+    </div>
+    <div class="flex flex-wrap">
+      <div class="w-full max-w-full mt-6 md:w-1/2 md:flex-none">
+        <h5 class="relative m-2 z-10 font-bold text-violet-900">
+          Other Details</h5>
+        <div class="shadow-xl mx-2 pt-2 my-2 pb-2 items-center justify-center rounded-lg bg-white">
+          <form role="form 2" class="mr-2 ml-2">
+            <label class="mb-2 mx-2 font-bold text-xs text-gray-700">Guarantee 1</label>
+            <div class="mb-4">
+              <div class=" mx-2">
+                <input type="text" id="guarantee_1" list="cash-books-list"
+                        class="bg-gray-200 outline-2 border text-gray-800 text-sm rounded-r-lg border-l-gray-100 border-l-2 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select guarantee 1" />
+                <datalist id="cash-books-list">
+                <option value="Option 1">
+                <option value="Option 2">
+                <option value="Option 3">
+                </datalist>
+              </div>
+            </div>
+            <label class="mb-2 mx-2 font-bold text-xs text-gray-700">Guarantee 2</label>
+            <div class="mb-4">
+              <div class=" mx-2">
+                <select id="states"
+                  class=" bg-gray-200 outline-2 border text-gray-800 text-sm rounded-r-lg border-l-gray-100 border-l-2 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <option selected>No guarentee</option>
+                  <option value="CA">I dunno</option>
+                  <option value="TX">why?</option>
+                  <option value="WH">why dunno?</option>
+                  <option value="FL">how</option>
+                  <option value="VG">do</option>
+                  <option value="GE">i</option>
+                  <option value="MI">Other</option>
+                </select>
+              </div>
+            </div>
+            <label class="mb-2 mx-2 font-bold text-xs text-gray-700">Guarantee 3</label>
+            <div class="mb-4">
+              <div class=" mx-2">
+                <select id="states"
+                  class=" bg-gray-200 outline-2 border text-gray-800 text-sm rounded-r-lg border-l-gray-100 border-l-2 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <option selected>No guarentee</option>
+                  <option value="CA">I dunno</option>
+                  <option value="TX">why?</option>
+                  <option value="WH">why dunno?</option>
+                  <option value="FL">how</option>
+                  <option value="VG">do</option>
+                  <option value="GE">i</option>
+                  <option value="MI">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-4">
+              <input type="text"
+                class=" w-full border-2 border-rose-500  rounded-lg py-2 text-gray-900 transition-all hidden mt-2"
+                placeholder="Enter Other reason .." aria-label="other" id="otherInput" />
+            </div>
+        </div>
+      </div>
+      <div class="w-full max-w-full mt-6 md:w-1/2 md:flex-none">
+        <h5 class="relative m-2 z-10 font-bold text-violet-900">
+          Interest Policy
+        </h5>
+        <div class="shadow-xl h-90 mr-2 ml-2 py-2 mb-4 items-center justify-center rounded-lg bg-white overflow-auto">
+          <table class="min-w-full mx-2 my-2 tex">
+            <thead>
+              <tr class="bg-gray-200">
+                <th class="px-6 py-3 text-left">Loan No</th>
+                <th class="px-6 py-3 text-left">Code</th>
+                <th class="px-6 py-3 text-left">Capital</th>
+                <th class="px-6 py-3 text-left">Account No</th>
+                <th class="px-6 py-3 text-left">Balance</th>
+              </tr>
+            </thead>
+            <tbody class=>
+              <!-- Use a loop to generate dynamic table rows -->
+              <!-- Example loop structure using JavaScript -->
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="ml-auto mx-2 mb-4">
+        <button type="button"
+          class="px-6 py-3 mt-6 mb-0 font-bold text-white transition-all bg-green-600 rounded-lg shadow-md hover:scale-105 active:opacity-85">
+          Save
+        </button>
+        <button type="button"
+          class="px-6 py-3 mt-6 mb-0 font-bold text-white transition-all bg-blue-600 rounded-lg shadow-md hover:scale-105 active:opacity-85">
+          Clear
+        </button>
+        <button type="button"
+          class="px-6 py-3 mt-6 mb-0 font-bold text-white transition-all bg-red-600 rounded-lg shadow-md hover:scale-105 active:opacity-85">
+          Cancel
+        </button>
+      </div>
+    </section>
+
+    <script src="../js/loanApplication.js"></script>
+  </body>
+</html>

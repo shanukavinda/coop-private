@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CoopMIS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <!-- Boxicons CDN Link -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="sidebar open">
+      <div class="logo-details">
+        <i class="bx bxl-c-plus-plus icon"></i>
+        <div class="logo_name">CoopMIS</div>
+        <!-- <i class="bx bx-menu" id="btn"></i> -->
+      </div>
+      <ul class="nav-list">
+        <li>
+          <i class="bx bx-search"></i>
+          <input type="text" placeholder="Search..." />
+          <span class="tooltip">Search</span>
+        </li>
+        <li>
+          <a href="../pages/customer.html">
+            <i class="bx bx-user"></i>
+            <span class="links_name">Customer</span>
+          </a>
+          <span class="tooltip">Customer</span>
+        </li>
+        <li>
+          <a href="../pages/loan-application.html">
+            <i class="bx bx-credit-card-front"></i>
+            <span class="links_name">Loan Application</span>
+          </a>
+          <span class="tooltip">Loan Application</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-dollar-circle"></i>
+            <span class="links_name">Savings Withdrawal</span>
+          </a>
+          <span class="tooltip">Savings Withdrawal</span>
+        </li>
+        <li>
+          <a href="../pages/savings-open.html">
+            <i class="bx bx-wallet"></i>
+            <span class="links_name">Savings Open</span>
+          </a>
+          <span class="tooltip">Savings Open</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Settings</span>
+          </a>
+          <span class="tooltip">Settings</span>
+        </li>
+        <li class="profile">
+          <div class="profile-details">
+            <img src="profile.jpg" alt="profileImg" />
+            <div class="name_job">
+              <div class="name">John Doe</div>
+              <div class="job">Developer</div>
+            </div>
+          </div>
+          <i class="bx bx-log-out" id="log_out"></i>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section">
+      <div class="text">Savings Withdrawal</div>
+<!-- Header -->
+    <div class="flex flex-col w-full px-4 mt-8 mx-auto">
+      <div class="flex shadow-xl mt-3 rounded-lg bg-white justify-between ">
+        <div class="w-full max-w-full mt-4 sm:my-auto sm:mr-0 md:w-1/2 md:flex-none lg:w-4/12 px-4">
+          <label for="customer-id-nic" class="font-bold text-xs text-gray-700 pr-2">
+            Customer ID/NIC :
+          </label>
+          <input id="cus_Nic_No" type="text" onkeypress="handleKeyPress(event)"
+            class="border-b border-gray-300 outline-none focus:outline-none bg-transparent text-base py-2 w-24"
+            placeholder="ID/NIC" />
+        </div>
+        <div class="flex w-auto max-w-full py-4 pr-10">
+          <div class="flex-none w-auto max-w-full px-3 my-auto">
+            <div class="h-full">
+              <h5 class="mb-1.5" id="customer_Name">Customer Name</h5>
+              <p class="mb-0 font-semibold leading-normal text-sm" id="customer_Nic">Customer Number</p>
+              <p class="mb-0 font-semibold leading-normal text-sm" id="customer_No">Customer NIC</p>
+            </div>
+          </div>
+          <div class="flex flex-row items-center gap-2 justify-between text-white">
+            <img src="../assets/img/bruce-mars.jpg" alt="profile_image" class="w-20 h-20 rounded-xl"/>
+            <img src="../assets/img/sigaa.jpg" alt="profile_image" class="w-18.5 h-18.5 rounded-xl"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- content -->
+    <div class="flex-1 flex max-h-ful h-full overflow-hidden px-8 py-6 mx-auto">
+      <div class="flex flex-col  max-h-full overflow-hidden ">
+
+        <div class="flex-1 flex h-full overflow-hidden pt-6 gap-6">
+          <div class="">
+            <div
+              class="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
+              <div class="p-6 px-4 pb-0 mb-0 bg-white border-b-0 rounded-t-2xl">
+                <h6 class="mb-0">Account Details</h6>
+              </div>
+              <div class="flex-auto p-4 pt-6">
+                <ul class="flex flex-col pl-0 mb-0 rounded-lg">
+                  <li class="flex py-3 px-2 rounded-xl bg-gray-50">
+                    <!-- Existing "Account No" input field -->
+                    <div class="flex items-center gap-2">
+                      <label for="cash-book" class="text-sm text-right w-36">Account No: </label>
+                      <select id="account_list" class="bg-slate-100 w-full rounded-md py-1.5 px-4">
+                        <option value="" disabled selected>Select your option</option>
+                      </select>
+                    </div>
+                    <!-- ------------------------------------------------- -->
+
+                  </li>
+                  <li class="flex py-3 px-2 rounded-xl bg-gray-50 mt-2">
+                    <div class="flex w-full justify-between">
+                      <div class="flex items-center gap-2">
+                        <label for="cash-book" class="text-sm text-right">Balance : </label>
+                        <input type="text" id="cash-book" class="bg-slate-100 w-full border-b py-1.5 px-4" readonly
+                          hidden />
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <label for="cash-book" class="text-sm text-right">Available : </label>
+                        <input type="text" id="cash-book" class="bg-slate-100 w-full rounded-md py-1.5 px-4" readonly
+                          hidden />
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="flex py-3 px-2 rounded-xl bg-gray-50 mt-2">
+                    <div class="flex items-center gap-2">
+                      <label for="cash-book" class="text-sm text-right w-36">Amount : </label>
+                      <input type="number" id="cash-book" class="bg-slate-100 w-full rounded-md py-1.5 px-4"
+                        placeholder="" />
+                    </div>
+                  </li>
+                  <li class="flex py-3 px-2 rounded-xl bg-gray-50 mt-2">
+                    <div class="flex items-center gap-2">
+                      <label for="cash-book" class="text-sm text-right w-36">Cash Book : </label>
+                      <input type="text" id="cash-book" list="cash-books-list"
+                        class="bg-slate-100 w-full rounded-md py-1.5 px-4" placeholder="Select you option" />
+                      <datalist id="cash-books-list">
+                        <option value="Option 1">
+                        <option value="Option 2">
+                        <option value="Option 3">
+                      </datalist>
+                    </div>
+                  </li>
+                  <li class="flex py-3 px-2 rounded-xl bg-gray-50 mt-2">
+                    <div class="flex items-center gap-2">
+                      <label for="cash-book" class="text-sm text-right w-36">Note : </label>
+                      <textarea class="bg-slate-100 w-full rounded-md -py- px-4"></textarea>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="h-full flex flex-col md:w-1/2  p-3 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
+            <div class="flex-1 max-w-full h-full overflow-hidden mx-auto px-4 sm:px-6 lg:px-8 py-8 ">
+              <div class=" h-full w-full  max-h-full overflow-auto ">
+                <table id="example" class="table-auto w-full">
+                  <thead class="sticky top-0 bg-white">
+                    <tr>
+                      <th class="px-4 py-2">Receipt_No</th>
+                      <th class="px-4 py-2">Date</th>
+                      <th class="px-4 py-2">Debit</th>
+                      <th class="px-4 py-2">Credit</th>
+                      <th class="px-4 py-2">Balance</th>
+                      <th class="px-4 py-2">Inte</th>
+                      <th class="px-4 py-2">Operator</th>
+                      <th class="px-4 py-2">Time</th>
+                      <th class="px-4 py-2">page</th>
+                      <th class="px-4 py-2">T_No</th>
+                      <th class="px-4 py-2">Pri</th>
+                      <th class="px-4 py-2">Description</th>
+
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="border px-4 py-2">JA23060004</td>
+                      <td class="border px-4 py-2">6/30/2023</td>
+                      <td class="border px-4 py-2">.00</td>
+                      <td class="border px-4 py-2">28.00</td>
+                      <td class="border px-4 py-2">2127.00</td>
+                      <td class="border px-4 py-2">.00</td>
+                      <td class="border px-4 py-2">000</td>
+                      <td class="border px-4 py-2"></td>
+                      <td class="border px-4 py-2">1</td>
+                      <td class="border px-4 py-2">1</td>
+                      <td class="border px-4 py-2">N</td>
+                      <td class="border px-4 py-2">Interest</td>
+                    </tr>
+                    <tr>
+                      <td class="border px-4 py-2">JA23060004</td>
+                      <td class="border px-4 py-2">6/30/2023</td>
+                      <td class="border px-4 py-2">.00</td>
+                      <td class="border px-4 py-2">28.00</td>
+                      <td class="border px-4 py-2">2127.00</td>
+                      <td class="border px-4 py-2">.00</td>
+                      <td class="border px-4 py-2">000</td>
+                      <td class="border px-4 py-2"></td>
+                      <td class="border px-4 py-2">1</td>
+                      <td class="border px-4 py-2">1</td>
+                      <td class="border px-4 py-2">N</td>
+                      <td class="border px-4 py-2">Interest</td>
+                    </tr>
+                    <tr>
+                      <td class="border px-4 py-2">JA23060004</td>
+                      <td class="border px-4 py-2">6/30/2023</td>
+                      <td class="border px-4 py-2">.00</td>
+                      <td class="border px-4 py-2">28.00</td>
+                      <td class="border px-4 py-2">2127.00</td>
+                      <td class="border px-4 py-2">.00</td>
+                      <td class="border px-4 py-2">000</td>
+                      <td class="border px-4 py-2"></td>
+                      <td class="border px-4 py-2">1</td>
+                      <td class="border px-4 py-2">1</td>
+                      <td class="border px-4 py-2">N</td>
+                      <td class="border px-4 py-2">Interest</td>
+                    </tr>
+                    <tr>
+                      <td class="border px-4 py-2">JA23060004</td>
+                      <td class="border px-4 py-2">6/30/2023</td>
+                      <td class="border px-4 py-2">.00</td>
+                      <td class="border px-4 py-2">28.00</td>
+                      <td class="border px-4 py-2">2127.00</td>
+                      <td class="border px-4 py-2">.00</td>
+                      <td class="border px-4 py-2">000</td>
+                      <td class="border px-4 py-2"></td>
+                      <td class="border px-4 py-2">1</td>
+                      <td class="border px-4 py-2">1</td>
+                      <td class="border px-4 py-2">N</td>
+                      <td class="border px-4 py-2">Interest</td>
+                    </tr>
+                    <tr>
+                      <td class="border px-4 py-2">JA23060004</td>
+                      <td class="border px-4 py-2">6/30/2023</td>
+                      <td class="border px-4 py-2">.00</td>
+                      <td class="border px-4 py-2">28.00</td>
+                      <td class="border px-4 py-2">2127.00</td>
+                      <td class="border px-4 py-2">.00</td>
+                      <td class="border px-4 py-2">000</td>
+                      <td class="border px-4 py-2"></td>
+                      <td class="border px-4 py-2">1</td>
+                      <td class="border px-4 py-2">1</td>
+                      <td class="border px-4 py-2">N</td>
+                      <td class="border px-4 py-2">Interest</td>
+                    </tr>
+
+                    <tr>
+                      <td class="border px-4 py-2">JA23060004</td>
+                      <td class="border px-4 py-2">6/30/2023</td>
+                      <td class="border px-4 py-2">.00</td>
+                      <td class="border px-4 py-2">28.00</td>
+                      <td class="border px-4 py-2">2127.00</td>
+                      <td class="border px-4 py-2">.00</td>
+                      <td class="border px-4 py-2">000</td>
+                      <td class="border px-4 py-2"></td>
+                      <td class="border px-4 py-2">1</td>
+                      <td class="border px-4 py-2">1</td>
+                      <td class="border px-4 py-2">N</td>
+                      <td class="border px-4 py-2">Interest</td>
+                    </tr>
+                    <tr>
+                      <td class="border px-4 py-2">JA23060004</td>
+                      <td class="border px-4 py-2">6/30/2023</td>
+                      <td class="border px-4 py-2">.00</td>
+                      <td class="border px-4 py-2">28.00</td>
+                      <td class="border px-4 py-2">2127.00</td>
+                      <td class="border px-4 py-2">.00</td>
+                      <td class="border px-4 py-2">000</td>
+                      <td class="border px-4 py-2"></td>
+                      <td class="border px-4 py-2">1</td>
+                      <td class="border px-4 py-2">1</td>
+                      <td class="border px-4 py-2">N</td>
+                      <td class="border px-4 py-2">Interest</td>
+                    </tr>
+                    <tr>
+                      <td class="border px-4 py-2">0</td>
+                      <td class="border px-4 py-2">6/30/2023</td>
+                      <td class="border px-4 py-2">.00</td>
+                      <td class="border px-4 py-2">28.00</td>
+                      <td class="border px-4 py-2">2127.00</td>
+                      <td class="border px-4 py-2">.00</td>
+                      <td class="border px-4 py-2">000</td>
+                      <td class="border px-4 py-2"></td>
+                      <td class="border px-4 py-2">1</td>
+                      <td class="border px-4 py-2">1</td>
+                      <td class="border px-4 py-2">N</td>
+                      <td class="border px-4 py-2">Interest</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Button feild -->
+
+    </div>
+    <div class=" flex w-full gap-2 justify-end px-5 my-6">
+      <button type="button"
+        class="text-white bg-fuchsia-700 hover:bg-fuchsia-600 rounded-md text-md px-4 py-2.5 text-center">
+        <span class="material-symbols-outlined">New</span>
+      </button>
+      <button type="button"
+        class="text-white bg-fuchsia-700 hover:bg-fuchsia-600 rounded-md text-md px-4 py-2.5 text-center">
+        <span class="material-symbols-outlined">Save</span>
+      </button>
+      <button type="button"
+        class="text-white bg-fuchsia-700 hover:bg-fuchsia-600 rounded-md text-md px-4 py-2.5 text-center">
+        <span class="material-symbols-outlined">Print</span>
+      </button>
+      <button type="button"
+        class="text-white bg-fuchsia-700 hover:bg-fuchsia-600 rounded-md text-md px-4 py-2.5 text-center">
+        <span class="material-symbols-outlined">Close</span>
+      </button>
+    </div>
+  </main>
+    </section>
+
+    <script src="../js/savingWithrawal.js"></script>
+  </body>
+</html>
