@@ -59,16 +59,6 @@
           </a>
           <span class="tooltip">Settings</span>
         </li>
-        <li class="profile">
-          <div class="profile-details">
-            <img src="profile.jpg" alt="profileImg" />
-            <div class="name_job">
-              <div class="name">John Doe</div>
-              <div class="job">Developer</div>
-            </div>
-          </div>
-          <i class="bx bx-log-out" id="log_out"></i>
-        </li>
       </ul>
     </div>
 
@@ -353,31 +343,38 @@
             >
               <div class="">
                 <div class="font-bold text-gray-800 m-2">Contact Details</div>
+                <div class="flex flex-row">
+                  <div class="mb-4 mt-2 px-2">
+                    <label
+                      class="block mb-1 text-gray-800"
+                      for="mobileInputOne"
+                    >
+                      Mobile No 1
+                    </label>
+                    <input
+                      id="mobileInputOne"
+                      type="tel"
+                      class="border p-2 w-full rounded-md focus:outline-blue-500"
+                      placeholder="Enter your mobile number 1"
+                      maxlength="{10}"
+                    />
+                  </div>
 
-                <div class="mb-4 mt-2 px-2">
-                  <label class="block mb-1 text-gray-800" for="mobileInputOne">
-                    Mobile No 1
-                  </label>
-                  <input
-                    id="mobileInputOne"
-                    type="tel"
-                    class="border p-2 w-full rounded-md focus:outline-blue-500"
-                    placeholder="Enter your mobile number 1"
-                    maxlength="{10}"
-                  />
-                </div>
-
-                <div class="mb-4 px-2">
-                  <label class="block mb-1 text-gray-800" for="mobileInputTwo">
-                    Mobile No 2
-                  </label>
-                  <input
-                    id="mobileInputTwo"
-                    type="tel"
-                    class="border p-2 w-full rounded-md focus:outline-blue-500"
-                    placeholder="Enter your mobile number 2"
-                    maxlength="{10}"
-                  />
+                  <div class="mb-4 mt-2 px-2">
+                    <label
+                      class="block mb-1 text-gray-800"
+                      for="mobileInputTwo"
+                    >
+                      Mobile No 2
+                    </label>
+                    <input
+                      id="mobileInputTwo"
+                      type="tel"
+                      class="border p-2 w-full rounded-md focus:outline-blue-500"
+                      placeholder="Enter your mobile number 2"
+                      maxlength="{10}"
+                    />
+                  </div>
                 </div>
 
                 <div class="mb-4 px-2">
@@ -513,7 +510,6 @@
                       placeholder="Enter credit limit approval date"
                     />
                   </div>
-                  
                 </div>
               </div>
             </div>
@@ -524,50 +520,56 @@
     <section class="footer-section">
       <div class="flex flex-row justify-end gap-2 items-center">
         <button
-          class="text-white font-bold bg-blue-600 hover:bg-blue-500 rounded-sm text-lg p-3 text-center"
+          class="text-white w-24 h-10 bg-blue-600 hover:bg-blue-500 rounded-lg text-base text-center"
         >
-          New
+          <i class="bx bx-plus-circle"></i>
+          <span>New</span>
         </button>
 
         <button
-          class="text-white font-bold bg-blue-600 hover:bg-blue-500 rounded-sm text-lg p-3 text-center"
+          class="text-white w-24 h-10 bg-blue-600 hover:bg-blue-500 rounded-lg text-base text-center"
         >
-          Find
+          <i class="bx bx-file-find"></i>
+          <span>Find</span>
         </button>
 
         <button
-          class="text-white font-bold bg-blue-600 hover:bg-blue-500 rounded-sm text-lg p-3 text-center"
+          class="text-white w-24 h-10 bg-blue-600 hover:bg-blue-500 rounded-lg text-base text-center"
         >
-          Edit
+          <i class="bx bx-edit"></i>
+          <span>Edit</span>
         </button>
 
         <button
-          class="text-white font-bold bg-blue-600 hover:bg-blue-500 rounded-sm text-lg p-3 text-center"
+          class="text-white w-24 h-10 bg-blue-600 hover:bg-blue-500 rounded-lg text-base text-center"
         >
-          Update
+          <span>Update</span>
         </button>
 
         <button
-          class="text-white font-bold bg-blue-600 hover:bg-blue-500 rounded-sm text-lg p-3 text-center"
+          class="text-white w-24 h-10 bg-blue-600 hover:bg-blue-500 rounded-lg text-base text-center"
         >
-          Save
+          <i class="bx bx-save"></i>
+          <span>Save</span>
         </button>
 
         <button
-          class="text-white font-bold bg-blue-600 hover:bg-blue-500 rounded-sm text-lg p-3 text-center"
+          class="text-white w-24 h-10 bg-blue-600 hover:bg-blue-500 rounded-lg text-base text-center"
         >
+          <i class="bx bx-x-circle"></i>
           Cancel
         </button>
 
         <button
-          class="text-white font-bold bg-blue-600 hover:bg-blue-500 rounded-sm text-lg p-3 text-center"
+          class="text-white w-24 h-10 bg-blue-600 hover:bg-blue-500 rounded-lg text-base text-center"
         >
           Preview
         </button>
 
         <button
-          class="text-white font-bold bg-blue-600 hover:bg-blue-500 rounded-sm text-lg p-3 text-center"
+          class="text-white w-24 h-10 bg-blue-600 hover:bg-blue-500 rounded-lg text-base text-center"
         >
+          <i class="bx bx-folder-open"></i>
           Open
         </button>
       </div>

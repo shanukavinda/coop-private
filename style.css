@@ -229,6 +229,8 @@
 }
 .home-section {
   position: relative;
+  overflow-y: auto;
+  padding-bottom: 60px;
   height: 100%;
   flex: 1;
   background: #e4e9f7;
@@ -254,9 +256,9 @@
 
 .footer-section {
   position: fixed;
-  background-color: #11101d;
+  background: #e4e9f7;
   color: #e4e9f7;
-  height: 70px;
+  height: 60px;
   left: 250px;
   bottom: 0;
   width: calc(100% - 250px);
