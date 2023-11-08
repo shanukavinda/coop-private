@@ -236,7 +236,6 @@
   background: #e4e9f7;
   top: 0;
   left: 78px;
-  bottom: 70px;
   width: calc(100% - 78px);
   z-index: 1;
 }
@@ -256,9 +255,12 @@
 
 .footer-section {
   position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   background: #e4e9f7;
   color: #e4e9f7;
-  height: 60px;
+  height: 50px;
   left: 250px;
   bottom: 0;
   width: calc(100% - 250px);
