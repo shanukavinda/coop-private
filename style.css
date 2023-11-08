@@ -230,7 +230,8 @@
 .home-section {
   position: relative;
   overflow-y: auto;
-  padding-bottom: 60px;
+  padding-top: 10px;
+  padding-bottom: 20px;
   height: 100%;
   flex: 1;
   background: #e4e9f7;
