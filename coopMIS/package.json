@@ -5,11 +5,13 @@
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
-    "start": "electron-forge start",
+    "start": "concurrently \"npm:electron\" \"npm:tailwind\"",
+    "electron": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "build": "npx tailwindcss -i ./style.css -o ./dist/output.css --watch"
+    "build": "npx tailwindcss -i ./style.css -o ./dist/output.css --watch",
+    "tailwind": "npm run build"
   },
   "keywords": [],
   "author": {
@@ -28,6 +30,7 @@
     "@electron-forge/maker-squirrel": "^6.4.2",
     "@electron-forge/maker-zip": "^6.4.2",
     "@electron-forge/plugin-auto-unpack-natives": "^6.4.2",
+    "concurrently": "^8.2.2",
     "electron": "27.0.4",
     "tailwindcss": "^3.3.5"
   }
